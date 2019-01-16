@@ -9,7 +9,7 @@ fetch(url)
   .then(function(data) {
     console.log(data);
   
-    const w = 1200
+    const w = 1000
     const h = 700;
     
     const root = d3.hierarchy(data)
@@ -64,7 +64,52 @@ fetch(url)
             fill = "red";
             break;
           case "Wii":
+            fill = "orange";
+            break;
+          case "NES":
+            fill = "yellow";
+            break;
+          case "GB":
+            fill = "purple";
+            break;
+          case "X360":
             fill = "green";
+            break;
+          case "PS3":
+            fill = "blue";
+            break;
+          case "PS2":
+            fill = "pink";
+            break;
+          case "SNES":
+            fill = "silver";
+            break;       
+          case "GBA":
+            fill = "grey";
+            break;
+          case "PS4":
+            fill = "brown";
+            break;
+          case "3DS":
+            fill = "skyblue";
+            break;
+          case "N64":
+            fill = "violet";
+            break;
+          case "PS":
+            fill = "darkgrey";
+            break;
+          case "XB":
+            fill = "slate";
+            break;
+          case "PC":
+            fill = "lightgrey";
+            break;
+          case "PSP":
+            fill = "forrestgreen";
+            break;
+          case "XOne":
+            fill = "darkgrey";
             break;
         }
         return fill;
