@@ -11,6 +11,11 @@ fetch(url)
   
     const w = 1200
     const h = 700;
+    
+    const root = d3.hierarchy(data)
+    const treeLayout = d3.tree();
+    treeLayout.size([w, h]);
+    treeLayout(root);
   
     const svg = d3.select(".container")
       .append("svg")
@@ -35,10 +40,16 @@ fetch(url)
       .attr("id", "description")
       .text("Top 100 Most Sold Video Games Grouped by Platform");
   
-    svg.selectAll("rect")
-      .data(data.children)
+  d3.select('svg')
+      .selectAll('rect')
+      .data(root.descendants())
       .enter()
-      .append("rect")
+      .append('rect')
       .attr("class", "tile")
-    
+      .attr('x', function(d) {return d.x;})
+      .attr('y', function(d) {return d.y;})
+      .attr('height', 10)
+      .attr('width', 10)
+      .attr("fill", "black")
+
   });
