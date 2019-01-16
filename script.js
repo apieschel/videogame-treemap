@@ -6,8 +6,8 @@ fetch(url)
   .then(function(response) {
     return response.json();
   })
-  .then(function(myJson) {
-    console.log(myJson);
+  .then(function(data) {
+    console.log(data);
   
     const w = 1200
     const h = 700;
@@ -28,11 +28,17 @@ fetch(url)
     d3.select(".heading")
       .append("h1")
       .attr("id", "title")
-      .text("United States Educational Attainment");
+      .text("Videogame Sales");
 
     d3.select(".heading")
       .append("h2")
       .attr("id", "description")
-      .text("Percentage of adults age 25 and older with a bachelor's degree or higher (2010-2014)");
+      .text("Top 100 Most Sold Video Games Grouped by Platform");
+  
+    svg.selectAll("rect")
+      .data(data.children)
+      .enter()
+      .append("rect")
+      .attr("class", "tile")
     
   });
