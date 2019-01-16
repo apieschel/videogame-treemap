@@ -14,7 +14,7 @@ fetch(url)
     
     const root = d3.hierarchy(data)
     const treeLayout = d3.treemap();
-    treeLayout.size([w, h]);
+    treeLayout.size([w, 1000]).paddingOuter(2);
   
     root.sum(function(d) {
       return d.value;
@@ -23,6 +23,9 @@ fetch(url)
     treeLayout(root);
     
     console.log(root.descendants());
+    const filtered = root.descendants().filter((d) => d.height === 0);
+    console.log(filtered);
+  
     const svg = d3.select(".container")
       .append("svg")
       .attr("id", "chart")
@@ -48,7 +51,7 @@ fetch(url)
   
   d3.select('svg')
       .selectAll('rect')
-      .data(root.descendants())
+      .data(filtered)
       .enter()
       .append('rect')
       .attr("class", "tile")
@@ -114,8 +117,62 @@ fetch(url)
           case "XOne":
             fill = "beige";
             break;
+          case "DS":
+            fill = "turquoise";
+            break;
         }
         return fill;
       })
+  
+      const legend = svg.append("g")
+                    .attr("id", "legend");
+      
+    legend.append("rect")
+      .attr("x", 0)
+      .attr("y", h - 16)
+      .attr("width", 10)
+      .attr("height", 10)
+      .attr("fill", "blue")
+      
+    legend.append("text")
+      .text("college degree or higher less than 10 percent")
+      .attr("x", 20)
+      .attr("y", (h - 5))
+    
+    legend.append("rect")
+      .attr("x", 0)
+      .attr("y", (h - 31))
+      .attr("width", 10)
+      .attr("height", 10)
+      .attr("fill", "skyblue")
+      
+    legend.append("text")
+      .text("college degree or higher between 10 and 20 percent")
+      .attr("x", 20)
+      .attr("y", (h - 20))
+    
+    legend.append("rect")
+      .attr("x", 0)
+      .attr("y", (h - 46))
+      .attr("width", 10)
+      .attr("height", 10)
+      .attr("fill", "yellow")
+      
+    legend.append("text")
+      .text("college degree or higher between 20 and 30 percent")
+      .attr("x", 20)
+      .attr("y", (h - 35))
+    
+    legend.append("rect")
+      .attr("x", 0)
+      .attr("y", (h - 61))
+      .attr("width", 10)
+      .attr("height", 10)
+      .attr("fill", "red")
+      
+    legend.append("text")
+      .text("college degree or higher greater than 30 percent")
+      .attr("x", 20)
+      .attr("y", (h - 50))
   
   });
