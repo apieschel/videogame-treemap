@@ -57,6 +57,9 @@ fetch(url)
       .attr('width', function(d) { return d.x1 - d.x0; })
       .attr('height', function(d) { return d.y1 - d.y0; })
       .attr('stroke', '#fff')
+      .attr("data-name", (d) => d.data.name)
+      .attr("data-category", (d) => d.data.category)
+      .attr("data-value", (d) => d.data.value)
       .attr('fill', (d) => {
         let fill;
         switch(d.data.category) {
@@ -100,16 +103,16 @@ fetch(url)
             fill = "darkgrey";
             break;
           case "XB":
-            fill = "slate";
+            fill = "cadetblue";
             break;
           case "PC":
-            fill = "lightgrey";
+            fill = "blueviolet";
             break;
           case "PSP":
-            fill = "forrestgreen";
+            fill = "aqua";
             break;
           case "XOne":
-            fill = "darkgrey";
+            fill = "beige";
             break;
         }
         return fill;
