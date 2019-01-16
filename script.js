@@ -9,7 +9,7 @@ fetch(url)
   .then(function(data) {
     console.log(data);
   
-    const w = 1000
+    const w = 1200
     const h = 700;
     
     const root = d3.hierarchy(data)
@@ -97,7 +97,7 @@ fetch(url)
             fill = "brown";
             break;
           case "3DS":
-            fill = "skyblue";
+            fill = "coral";
             break;
           case "N64":
             fill = "violet";
@@ -194,11 +194,11 @@ fetch(url)
       .attr("y", (80))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "red")
+      .attr("fill", "green")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("2600")
+      .text("X360")
       .attr("x", 20)
       .attr("y", (89))
   
@@ -207,11 +207,11 @@ fetch(url)
       .attr("y", (100))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "red")
+      .attr("fill", "blue")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("2600")
+      .text("PS3")
       .attr("x", 20)
       .attr("y", (109))
   
@@ -220,11 +220,11 @@ fetch(url)
       .attr("y", (120))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "red")
+      .attr("fill", "purple")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("2600")
+      .text("GB")
       .attr("x", 20)
       .attr("y", (129))
   
@@ -234,11 +234,11 @@ fetch(url)
       .attr("y", 20)
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "blue")
+      .attr("fill", "turquoise")
       .attr("class", "legend-item")
       
     legend.append("text")
-      .text("Wii")
+      .text("DS")
       .attr("x", 120)
       .attr("y", 29)
     
@@ -247,11 +247,11 @@ fetch(url)
       .attr("y", (40))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "skyblue")
+      .attr("fill", "silver")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("3DS")
+      .text("SNES")
       .attr("x", 120)
       .attr("y", (49))
     
@@ -260,11 +260,11 @@ fetch(url)
       .attr("y", (60))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "yellow")
+      .attr("fill", "grey")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("NES")
+      .text("GBA")
       .attr("x", 120)
       .attr("y", (69))
     
@@ -273,11 +273,11 @@ fetch(url)
       .attr("y", (80))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "red")
+      .attr("fill", "brown")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("2600")
+      .text("PS4")
       .attr("x", 120)
       .attr("y", (89))
   
@@ -286,11 +286,11 @@ fetch(url)
       .attr("y", (100))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "red")
+      .attr("fill", "coral")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("2600")
+      .text("3DS")
       .attr("x", 120)
       .attr("y", (109))
   
@@ -299,11 +299,11 @@ fetch(url)
       .attr("y", (120))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "red")
+      .attr("fill", "violet")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("2600")
+      .text("N64")
       .attr("x", 120)
       .attr("y", (129))
   
@@ -326,7 +326,7 @@ fetch(url)
       .attr("y", (40))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "skyblue")
+      .attr("fill", "coral")
       .attr("class", "legend-item")
   
     legend.append("text")
