@@ -122,9 +122,25 @@ fetch(url)
             break;
         }
         return fill;
-      })
+      }).on("mouseover", function(d) {
+          tooltip
+            .transition()
+            .duration(100)
+            .style("opacity", 0.85);
+          tooltip
+            .html("<p>" + d.data.name + ", " + d.data.category +  " " + d.data.value + "</p>")
+            .style("left", d3.event.pageX + 15 + "px")
+            .style("top", d3.event.pageY + 15 + "px");
+          tooltip.attr("data-value", d.data.value);
+        })
+        .on("mouseout", function(d) {
+          tooltip
+            .transition()
+            .style("opacity", 0);
+        });
     
   
+    // Legend
     const svg2 = d3.select(".container2")
       .append("svg")
       .attr("id", "info")
@@ -140,9 +156,10 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "blue")
+      .attr("class", "legend-item")
       
     legend.append("text")
-      .text("college degree or higher less than 10 percent")
+      .text("Wii")
       .attr("x", 20)
       .attr("y", 29)
     
@@ -152,34 +169,37 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "skyblue")
-      
+      .attr("class", "legend-item")
+  
     legend.append("text")
-      .text("college degree or higher between 10 and 20 percent")
+      .text("3DS")
       .attr("x", 20)
-      .attr("y", (h - 20))
+      .attr("y", (49))
     
     legend.append("rect")
       .attr("x", 0)
-      .attr("y", (h - 46))
+      .attr("y", (60))
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "yellow")
-      
+      .attr("class", "legend-item")
+  
     legend.append("text")
-      .text("college degree or higher between 20 and 30 percent")
+      .text("NES")
       .attr("x", 20)
-      .attr("y", (h - 35))
+      .attr("y", (69))
     
     legend.append("rect")
       .attr("x", 0)
-      .attr("y", (h - 61))
+      .attr("y", (80))
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "red")
-      
+      .attr("class", "legend-item")
+  
     legend.append("text")
-      .text("college degree or higher greater than 30 percent")
+      .text("2600")
       .attr("x", 20)
-      .attr("y", (h - 50))
+      .attr("y", (89))
   
   });
