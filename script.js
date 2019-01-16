@@ -13,8 +13,13 @@ fetch(url)
     const h = 700;
     
     const root = d3.hierarchy(data)
-    const treeLayout = d3.tree();
+    const treeLayout = d3.treemap();
     treeLayout.size([w, h]);
+  
+    root.sum(function(d) {
+      return d.value;
+    });
+  
     treeLayout(root);
     
     console.log(root.descendants());
@@ -47,10 +52,22 @@ fetch(url)
       .enter()
       .append('rect')
       .attr("class", "tile")
-      .attr('x', function(d) {return d.x;})
-      .attr('y', function(d) {return d.y;})
-      .attr('height', 10)
-      .attr('width', 10)
-      .attr("fill", "black")
-
+      .attr('x', function(d) { return d.x0; })
+      .attr('y', function(d) { return d.y0; })
+      .attr('width', function(d) { return d.x1 - d.x0; })
+      .attr('height', function(d) { return d.y1 - d.y0; })
+      .attr('stroke', '#fff')
+      .attr('fill', (d) => {
+        let fill;
+        switch(d.data.category) {
+          case "2600":
+            fill = "red";
+            break;
+          case "Wii":
+            fill = "green";
+            break;
+        }
+        return fill;
+      })
+  
   });
