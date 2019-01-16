@@ -9,12 +9,12 @@ fetch(url)
   .then(function(data) {
     console.log(data);
   
-    const w = 1300
+    const w = 1100
     const h = 1000;
     
     const root = d3.hierarchy(data)
     const treeLayout = d3.treemap();
-    treeLayout.size([w, 1000]).paddingOuter(2);
+    treeLayout.size([w, 1000]);
   
     root.sum(function(d) {
       return d.value;
@@ -49,23 +49,14 @@ fetch(url)
       .attr("id", "description")
       .text("Top 100 Most Sold Video Games Grouped by Platform");
   
-  var nodes = d3.select('svg g')
-    .selectAll('g')
-    .data(filtered)
-    .enter()
-    .append('g')
-    .attr('transform', function(d) {return 'translate(' + [d.x0, d.y0] + ')'})
+    const nodes = d3.select('svg')
+      .selectAll('g')
+      .data(filtered)
+      .enter()
+      .append('g')
+      .attr('transform', function(d) {return 'translate(' + [d.x0, d.y0] + ')'})
 
-
-  nodes
-    .append('text')
-    .attr('dx', 4)
-    .attr('dy', 14)
-    .text(function(d) {
-      return d.data.name;
-  })
-  
-  nodes
+    nodes
       .append('rect')
       .attr("class", "tile")
       .attr('width', function(d) { return d.x1 - d.x0; })
@@ -149,6 +140,15 @@ fetch(url)
             .transition()
             .style("opacity", 0);
         });
+
+    nodes
+      .append('text')
+      .attr('dx', 4)
+      .attr('dy', 14)
+      .text(function(d) {
+        return d.data.name;
+    })
+
     
   /*
     d3.select('svg')
