@@ -49,14 +49,25 @@ fetch(url)
       .attr("id", "description")
       .text("Top 100 Most Sold Video Games Grouped by Platform");
   
-  d3.select('svg')
-      .selectAll('rect')
-      .data(filtered)
-      .enter()
+  var nodes = d3.select('svg g')
+    .selectAll('g')
+    .data(filtered)
+    .enter()
+    .append('g')
+    .attr('transform', function(d) {return 'translate(' + [d.x0, d.y0] + ')'})
+
+
+  nodes
+    .append('text')
+    .attr('dx', 4)
+    .attr('dy', 14)
+    .text(function(d) {
+      return d.data.name;
+  })
+  
+  nodes
       .append('rect')
       .attr("class", "tile")
-      .attr('x', function(d) { return d.x0; })
-      .attr('y', function(d) { return d.y0; })
       .attr('width', function(d) { return d.x1 - d.x0; })
       .attr('height', function(d) { return d.y1 - d.y0; })
       .attr('stroke', '#fff')
@@ -139,16 +150,18 @@ fetch(url)
             .style("opacity", 0);
         });
     
+  /*
     d3.select('svg')
-      .selectAll('text')
+      .append('text')
+      .selectAll('tspan')
       .data(filtered)
       .enter()
-      .append('text')
+      .append('tspan')
       .text((d) => d.data.name)
       .attr('x', function(d) { return d.x0 + 5; })
       .attr('y', function(d) { return d.y0 + 15; })
       .attr("width", 10)
-
+*/
     // Legend
     const svg2 = d3.select(".container2")
       .append("svg")
