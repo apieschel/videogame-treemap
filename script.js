@@ -128,7 +128,7 @@ fetch(url)
             .duration(100)
             .style("opacity", 0.85);
           tooltip
-            .html("<p>" + d.data.name + ", " + d.data.category +  " " + d.data.value + "</p>")
+            .html("<p>" + d.data.name + ", " + d.data.category +  "</p><p><strong>Value:<strong> " + d.data.value + "</p>")
             .style("left", d3.event.pageX + 15 + "px")
             .style("top", d3.event.pageY + 15 + "px");
           tooltip.attr("data-value", d.data.value);
