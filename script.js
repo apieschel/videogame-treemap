@@ -10,7 +10,7 @@ fetch(url)
     console.log(data);
   
     const w = 1200
-    const h = 700;
+    const h = 1000;
     
     const root = d3.hierarchy(data)
     const treeLayout = d3.treemap();
@@ -103,7 +103,7 @@ fetch(url)
             fill = "violet";
             break;
           case "PS":
-            fill = "darkgrey";
+            fill = "darkgoldenrod";
             break;
           case "XB":
             fill = "cadetblue";
@@ -313,11 +313,11 @@ fetch(url)
       .attr("y", 20)
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "blue")
+      .attr("fill", "pink")
       .attr("class", "legend-item")
       
     legend.append("text")
-      .text("Wii")
+      .text("PS2")
       .attr("x", 220)
       .attr("y", 29)
     
@@ -326,11 +326,11 @@ fetch(url)
       .attr("y", (40))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "coral")
+      .attr("fill", "darkgoldenrod")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("3DS")
+      .text("PS")
       .attr("x", 220)
       .attr("y", (49))
     
@@ -339,11 +339,11 @@ fetch(url)
       .attr("y", (60))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "yellow")
+      .attr("fill", "cadetblue")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("NES")
+      .text("XB")
       .attr("x", 220)
       .attr("y", (69))
     
