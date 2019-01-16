@@ -16,7 +16,8 @@ fetch(url)
     const treeLayout = d3.tree();
     treeLayout.size([w, h]);
     treeLayout(root);
-  
+    
+    console.log(root.descendants());
     const svg = d3.select(".container")
       .append("svg")
       .attr("id", "chart")
