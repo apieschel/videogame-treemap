@@ -139,13 +139,22 @@ fetch(url)
             .style("opacity", 0);
         });
     
-  
+    d3.select('svg')
+      .selectAll('text')
+      .data(filtered)
+      .enter()
+      .append('text')
+      .text((d) => d.data.name)
+      .attr('x', function(d) { return d.x0 + 5; })
+      .attr('y', function(d) { return d.y0 + 15; })
+      .attr("width", 10)
+
     // Legend
     const svg2 = d3.select(".container2")
       .append("svg")
       .attr("id", "info")
-      .attr("width", 500)
-      .attr("height", 250)
+      .attr("width", 300)
+      .attr("height", 200)
     
     const legend = svg2.append("g")
                     .attr("id", "legend");
@@ -352,11 +361,11 @@ fetch(url)
       .attr("y", (80))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "red")
+      .attr("fill", "aqua")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("2600")
+      .text("PSP")
       .attr("x", 220)
       .attr("y", (89))
   
@@ -365,11 +374,11 @@ fetch(url)
       .attr("y", (100))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "red")
+      .attr("fill", "beige")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("2600")
+      .text("XOne")
       .attr("x", 220)
       .attr("y", (109))
   
@@ -378,11 +387,11 @@ fetch(url)
       .attr("y", (120))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "red")
+      .attr("fill", "blueviolet")
       .attr("class", "legend-item")
   
     legend.append("text")
-      .text("2600")
+      .text("PC")
       .attr("x", 220)
       .attr("y", (129))
   
