@@ -9,7 +9,7 @@ fetch(url)
   .then(function(data) {
     console.log(data);
   
-    const w = 1200
+    const w = 1300
     const h = 1000;
     
     const root = d3.hierarchy(data)
