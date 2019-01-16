@@ -123,13 +123,20 @@ fetch(url)
         }
         return fill;
       })
+    
   
-      const legend = svg.append("g")
+    const svg2 = d3.select(".container2")
+      .append("svg")
+      .attr("id", "info")
+      .attr("width", 500)
+      .attr("height", 250)
+    
+    const legend = svg2.append("g")
                     .attr("id", "legend");
       
     legend.append("rect")
       .attr("x", 0)
-      .attr("y", h - 16)
+      .attr("y", 20)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "blue")
@@ -137,11 +144,11 @@ fetch(url)
     legend.append("text")
       .text("college degree or higher less than 10 percent")
       .attr("x", 20)
-      .attr("y", (h - 5))
+      .attr("y", 29)
     
     legend.append("rect")
       .attr("x", 0)
-      .attr("y", (h - 31))
+      .attr("y", (40))
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "skyblue")
