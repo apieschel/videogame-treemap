@@ -69,58 +69,58 @@ fetch(url)
         let fill;
         switch(d.data.category) {
           case "2600":
-            fill = "#E798AA";
+            fill = "red";
             break;
           case "Wii":
-            fill = "white";
+            fill = "orange";
             break;
           case "NES":
-            fill = "white";
+            fill = "yellow";
             break;
           case "GB":
-            fill = "white";
+            fill = "magenta";
             break;
           case "X360":
-            fill = "#EDB2BF";
+            fill = "green";
             break;
           case "PS3":
-            fill = "white";
+            fill = "blue";
             break;
           case "PS2":
-            fill = "white";
+            fill = "pink";
             break;
           case "SNES":
-            fill = "white";
+            fill = "silver";
             break;       
           case "GBA":
-            fill = "white";
+            fill = "grey";
             break;
           case "PS4":
-            fill = "white";
+            fill = "brown";
             break;
           case "3DS":
-            fill = "white";
+            fill = "coral";
             break;
           case "N64":
-            fill = "#F3CCD4";
+            fill = "violet";
             break;
           case "PS":
-            fill = "white";
+            fill = "darkgoldenrod";
             break;
           case "XB":
-            fill = "white";
+            fill = "cadetblue";
             break;
           case "PC":
-            fill = "#F0BFCA";
+            fill = "blueviolet";
             break;
           case "PSP":
-            fill = "#F9E5EA";
+            fill = "aqua";
             break;
           case "XOne":
-            fill = "white";
+            fill = "beige";
             break;
           case "DS":
-            fill = "#EAA5B5";
+            fill = "cyan";
             break;
         }
         return fill;
@@ -256,7 +256,7 @@ fetch(url)
       .attr("y", 20)
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "turquoise")
+      .attr("fill", "magenta")
       .attr("class", "legend-item")
       
     legend.append("text")
