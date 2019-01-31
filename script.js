@@ -69,16 +69,16 @@ fetch(url)
         let fill;
         switch(d.data.category) {
           case "2600":
-            fill = "red";
+            fill = "#efeef6";
             break;
           case "Wii":
-            fill = "orange";
+            fill = "#dcbcbc";
             break;
           case "NES":
             fill = "yellow";
             break;
           case "GB":
-            fill = "purple";
+            fill = "#8279b9";
             break;
           case "X360":
             fill = "green";
@@ -87,7 +87,7 @@ fetch(url)
             fill = "blue";
             break;
           case "PS2":
-            fill = "pink";
+            fill = "#c0bcdc";
             break;
           case "SNES":
             fill = "silver";

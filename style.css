@@ -22,12 +22,13 @@ h1, h2 {
     height: auto;					
     padding: 5px 10px;				
     font: 14px sans-serif;		
-    background: lavender;	
-    border: 0px;		
+    background: ghostwhite;	
+    border: 1px solid black;		
     pointer-events: none;
 }
 
 text {
   font-size: 10px;
+  font-weight: bold;
   overflow: hidden;
 }
