@@ -105,7 +105,7 @@ fetch(url)
             fill = "violet";
             break;
           case "PS":
-            fill = "darkgoldenrod";
+            fill = "chartreuse";
             break;
           case "XB":
             fill = "cadetblue";
@@ -114,7 +114,7 @@ fetch(url)
             fill = "blueviolet";
             break;
           case "PSP":
-            fill = "aqua";
+            fill = "aliceblue";
             break;
           case "XOne":
             fill = "beige";
@@ -348,7 +348,7 @@ fetch(url)
       .attr("y", (40))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "darkgoldenrod")
+      .attr("fill", "chartreuse")
       .attr("class", "legend-item")
   
     legend.append("text")
@@ -374,7 +374,7 @@ fetch(url)
       .attr("y", (80))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "aqua")
+      .attr("fill", "aliceblue")
       .attr("class", "legend-item")
   
     legend.append("text")
