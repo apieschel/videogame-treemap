@@ -75,25 +75,25 @@ fetch(url)
             fill = "#dcbcbc";
             break;
           case "NES":
-            fill = "yellow";
+            fill = "#bcdcbc";
             break;
           case "GB":
-            fill = "#8279b9";
+            fill = "#E798AA";
             break;
           case "X360":
-            fill = "green";
+            fill = "#E7AD98";
             break;
           case "PS3":
-            fill = "blue";
+            fill = "#E7D598";
             break;
           case "PS2":
-            fill = "#c0bcdc";
+            fill = "#D2E798";
             break;
           case "SNES":
-            fill = "silver";
+            fill = "#AAE798";
             break;       
           case "GBA":
-            fill = "grey";
+            fill = "#98E7AE";
             break;
           case "PS4":
             fill = "brown";
@@ -120,7 +120,7 @@ fetch(url)
             fill = "beige";
             break;
           case "DS":
-            fill = "turquoise";
+            fill = "#C5DBBD";
             break;
         }
         return fill;
