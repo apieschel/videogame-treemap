@@ -1,1 +1,1 @@
-This is a treemap that uses D3's treemap functions to chart top selling videogames, grouped according to platform.
+This is a treemap that uses D3's treemap functions to chart the top 100 selling videogames, grouped according to platform.

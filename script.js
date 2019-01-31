@@ -96,7 +96,7 @@ fetch(url)
             fill = "grey";
             break;
           case "PS4":
-            fill = "brown";
+            fill = "springgreen";
             break;
           case "3DS":
             fill = "coral";
@@ -295,7 +295,7 @@ fetch(url)
       .attr("y", (80))
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "brown")
+      .attr("fill", "springgreen")
       .attr("class", "legend-item")
   
     legend.append("text")
