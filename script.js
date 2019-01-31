@@ -7,8 +7,6 @@ fetch(url)
     return response.json();
   })
   .then(function(data) {
-    console.log(data);
-  
     const w = 1100
     const h = 1000;
     
@@ -21,23 +19,21 @@ fetch(url)
     });
   
     treeLayout(root);
-    
-    console.log(root.descendants());
+
     const filtered = root.descendants().filter((d) => d.height === 0);
-    console.log(filtered);
   
     const svg = d3.select(".container")
       .append("svg")
       .attr("id", "chart")
       .attr("width", w)
-      .attr("height", h)
+      .attr("height", h);
     
     const tooltip = d3
       .select("body")
       .append("div")
       .attr("class", "tooltip")
       .attr("id", "tooltip")
-      .style("opacity", 0)
+      .style("opacity", 0);
 
     d3.select(".heading")
       .append("h1")
@@ -54,7 +50,7 @@ fetch(url)
       .data(filtered)
       .enter()
       .append('g')
-      .attr('transform', function(d) {return 'translate(' + [d.x0, d.y0] + ')'})
+      .attr('transform', function(d) {return 'translate(' + [d.x0, d.y0] + ')'});
 
     nodes
       .append('rect')
@@ -147,27 +143,15 @@ fetch(url)
       .attr('dy', 14)
       .text(function(d) {
         return d.data.name;
-    })
+    });
 
-    
-  /*
-    d3.select('svg')
-      .append('text')
-      .selectAll('tspan')
-      .data(filtered)
-      .enter()
-      .append('tspan')
-      .text((d) => d.data.name)
-      .attr('x', function(d) { return d.x0 + 5; })
-      .attr('y', function(d) { return d.y0 + 15; })
-      .attr("width", 10)
-*/
+  
     // Legend
     const svg2 = d3.select(".container2")
       .append("svg")
       .attr("id", "info")
       .attr("width", 300)
-      .attr("height", 200)
+      .attr("height", 200);
     
     const legend = svg2.append("g")
                     .attr("id", "legend");
@@ -178,12 +162,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "red")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
       
     legend.append("text")
       .text("2600")
       .attr("x", 20)
-      .attr("y", 29)
+      .attr("y", 29);
     
     legend.append("rect")
       .attr("x", 0)
@@ -191,12 +175,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "orange")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("Wii")
       .attr("x", 20)
-      .attr("y", (49))
+      .attr("y", (49));
     
     legend.append("rect")
       .attr("x", 0)
@@ -204,12 +188,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "yellow")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("NES")
       .attr("x", 20)
-      .attr("y", (69))
+      .attr("y", (69));
     
     legend.append("rect")
       .attr("x", 0)
@@ -217,12 +201,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "green")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("X360")
       .attr("x", 20)
-      .attr("y", (89))
+      .attr("y", (89));
   
     legend.append("rect")
       .attr("x", 0)
@@ -230,12 +214,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "blue")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("PS3")
       .attr("x", 20)
-      .attr("y", (109))
+      .attr("y", (109));
   
     legend.append("rect")
       .attr("x", 0)
@@ -243,12 +227,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "purple")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("GB")
       .attr("x", 20)
-      .attr("y", (129))
+      .attr("y", (129));
   
     // 2nd column
     legend.append("rect")
@@ -257,12 +241,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "magenta")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
       
     legend.append("text")
       .text("DS")
       .attr("x", 120)
-      .attr("y", 29)
+      .attr("y", 29);
     
     legend.append("rect")
       .attr("x", 100)
@@ -270,12 +254,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "silver")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("SNES")
       .attr("x", 120)
-      .attr("y", (49))
+      .attr("y", (49));
     
     legend.append("rect")
       .attr("x", 100)
@@ -283,12 +267,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "grey")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("GBA")
       .attr("x", 120)
-      .attr("y", (69))
+      .attr("y", (69));
     
     legend.append("rect")
       .attr("x", 100)
@@ -296,12 +280,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "springgreen")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("PS4")
       .attr("x", 120)
-      .attr("y", (89))
+      .attr("y", (89));
   
     legend.append("rect")
       .attr("x", 100)
@@ -309,12 +293,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "coral")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("3DS")
       .attr("x", 120)
-      .attr("y", (109))
+      .attr("y", (109));
   
     legend.append("rect")
       .attr("x", 100)
@@ -322,12 +306,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "violet")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("N64")
       .attr("x", 120)
-      .attr("y", (129))
+      .attr("y", (129));
   
     // 3rd column
     legend.append("rect")
@@ -336,12 +320,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "pink")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
       
     legend.append("text")
       .text("PS2")
       .attr("x", 220)
-      .attr("y", 29)
+      .attr("y", 29);
     
     legend.append("rect")
       .attr("x", 200)
@@ -349,12 +333,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "chartreuse")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("PS")
       .attr("x", 220)
-      .attr("y", (49))
+      .attr("y", (49));
     
     legend.append("rect")
       .attr("x", 200)
@@ -362,12 +346,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "cadetblue")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("XB")
       .attr("x", 220)
-      .attr("y", (69))
+      .attr("y", (69));
     
     legend.append("rect")
       .attr("x", 200)
@@ -375,12 +359,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "aliceblue")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("PSP")
       .attr("x", 220)
-      .attr("y", (89))
+      .attr("y", (89));
   
     legend.append("rect")
       .attr("x", 200)
@@ -388,12 +372,12 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "beige")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("XOne")
       .attr("x", 220)
-      .attr("y", (109))
+      .attr("y", (109));
   
     legend.append("rect")
       .attr("x", 200)
@@ -401,11 +385,10 @@ fetch(url)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "blueviolet")
-      .attr("class", "legend-item")
+      .attr("class", "legend-item");
   
     legend.append("text")
       .text("PC")
       .attr("x", 220)
-      .attr("y", (129))
-  
+      .attr("y", (129));
   });
