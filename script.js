@@ -69,58 +69,58 @@ fetch(url)
         let fill;
         switch(d.data.category) {
           case "2600":
-            fill = "#efeef6";
-            break;
-          case "Wii":
-            fill = "#dcbcbc";
-            break;
-          case "NES":
-            fill = "#bcdcbc";
-            break;
-          case "GB":
             fill = "#E798AA";
             break;
+          case "Wii":
+            fill = "white";
+            break;
+          case "NES":
+            fill = "white";
+            break;
+          case "GB":
+            fill = "white";
+            break;
           case "X360":
-            fill = "#E7AD98";
+            fill = "#EDB2BF";
             break;
           case "PS3":
-            fill = "#E7D598";
+            fill = "white";
             break;
           case "PS2":
-            fill = "#D2E798";
+            fill = "white";
             break;
           case "SNES":
-            fill = "#AAE798";
+            fill = "white";
             break;       
           case "GBA":
-            fill = "#98E7AE";
+            fill = "white";
             break;
           case "PS4":
-            fill = "brown";
+            fill = "white";
             break;
           case "3DS":
-            fill = "coral";
+            fill = "white";
             break;
           case "N64":
-            fill = "violet";
+            fill = "#F3CCD4";
             break;
           case "PS":
-            fill = "darkgoldenrod";
+            fill = "white";
             break;
           case "XB":
-            fill = "cadetblue";
+            fill = "white";
             break;
           case "PC":
-            fill = "blueviolet";
+            fill = "#F0BFCA";
             break;
           case "PSP":
-            fill = "aqua";
+            fill = "#F9E5EA";
             break;
           case "XOne":
-            fill = "beige";
+            fill = "white";
             break;
           case "DS":
-            fill = "#C5DBBD";
+            fill = "#EAA5B5";
             break;
         }
         return fill;
